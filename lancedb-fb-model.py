@@ -17,8 +17,8 @@ table.add(df)
 
 
 query = "How to say goodbye in Japanese?"
-actual = table.search(query).limit(1).to_pydantic(TextModel)[0]
-print(actual.text)
+actual = table.search(query).limit(1).to_polars()
+print(actual)
 
 
 
