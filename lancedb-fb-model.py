@@ -10,7 +10,7 @@ class TextModel(LanceModel):
     vector: Vector(model.ndims()) = model.VectorField()
 
 
-df = pl.DataFrame({"text": ["hi", "hello", "sayonara", "goodbye world", "adios"]})
+df = pl.DataFrame({"text": ["hi", "hello", "sayonara", "goodbye world"]})
 db = ldb.connect("~/.lancedb-bart")
 table = db.create_table("greets", schema=TextModel, mode="overwrite")
 table.add(df)
